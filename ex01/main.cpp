@@ -46,7 +46,7 @@ int		main()
 			std::cout << "Please enter an index to display details : ";
 			std::getline(std::cin, index);
 			if (!isNumber(index))
-				std::cout << "Index must be a numeric value !" << std::endl;
+				std::cout << "Index must be a positive numeric value !" << std::endl;
 			else
 				pb.searchContact(std::stoi(index));
 		}

@@ -36,13 +36,13 @@ void	PhoneBook::addContact(Contact c){
 void	PhoneBook::searchContact() {
 	int l;
 	l = (_nbContacts > 8) ? 8 : _nbContacts;
-	std::cout <<std::setw(10) << "Index"  << " | ";
-	std::cout << std::setw(10) << "First Name" << " | ";
-	std::cout << std::setw(10) << "Last Name" << " | ";
-	std::cout << std::setw(10) << "Nickname" << " |"<< std::endl;
+	std::cout << "|" << std::right << std::setw(10) << "Index"  << "|";
+	std::cout << std::right << std::setw(10) << "First Name" << "|";
+	std::cout << std::right << std::setw(10) << "Last Name" << "|";
+	std::cout << std::right << std::setw(10) << "Nickname" << "|"<< std::endl;
 	for (int i = 0; i < l; i++)
 	{
-		std::cout << std::setw(10) << i << " | ";
+		std::cout << "|" << std::setw(10) << i << "|";
 		_contacts[i].printRow();
 		std::cout << std::endl;
 	}

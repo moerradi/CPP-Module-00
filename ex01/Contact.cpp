@@ -11,9 +11,9 @@ Contact::Contact(){
 void	 printProp(std::string prop)
 {
 	if (prop.size() > 10)
-   		std::cout << prop.substr(0, 9) << "." << " | ";
+   		std::cout << prop.substr(0, 9) << "." << "|";
 	else
-		std::cout << std::setw(10) << prop << " | ";
+		std::cout << std::right << std::setw(10) << prop << "|";
 }
 
 Contact::~Contact(){
