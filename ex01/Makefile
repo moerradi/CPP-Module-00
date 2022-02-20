@@ -1,5 +1,5 @@
 NAME=phonebook
-FLAGS=-Wall -Wextra -Werror -std=c++98
+FLAGS=-Wall -Wextra -Werror
 SRCS=main.cpp phonebook.cpp Contact.cpp
 
 all: $(NAME)
