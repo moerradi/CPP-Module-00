@@ -8,6 +8,14 @@ Contact::Contact(){
 	_number = "";
 }
 
+void	 printProp(std::string prop)
+{
+	if (prop.size() > 10)
+   		std::cout << prop.substr(0, 9) << "." << " | ";
+	else
+		std::cout << std::setw(10) << prop << " | ";
+}
+
 Contact::~Contact(){
 }
 
@@ -46,4 +54,18 @@ std::string Contact::getLastName(){
 
 std::string Contact::getNickname(){
 	return (_nickname);
+}
+
+void	Contact::printRow() {
+	printProp(_firstname);
+	printProp(_lastname);
+	printProp(_nickname);
+}
+
+void	Contact::printDetails() {
+	std::cout << std::left << std::setw(15) << "First name" << ":" << _firstname << std::endl;
+	std::cout << std::left << std::setw(15) << "Last name" << ":" << _lastname << std::endl;
+	std::cout << std::left << std::setw(15) << "Nickname" << ":" << _nickname << std::endl;
+	std::cout << std::left << std::setw(15) << "Phone number" << ":" << _number << std::endl;
+	std::cout << std::left << std::setw(15) << "Darkest secret" << ":" << _darksecret << std::endl;
 }

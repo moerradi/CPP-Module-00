@@ -1,12 +1,6 @@
 #include "PhoneBook.hpp"
 
-std::string minw(std::string sv, std::size_t width)
-{
-	if (sv.size() > width)
-   		return (sv.substr(0, width - 1) + ".");
-	else
-		return (sv + std::string(width - sv.size(), ' '));
-}
+
 
 PhoneBook::PhoneBook(){
 	_nbContacts = 0;
@@ -39,13 +33,26 @@ void	PhoneBook::addContact(Contact c){
 	std::cout << "Contact added" << std::endl;
 }
 
-void	PhoneBook::searchContact(){
-	std::cout <<minw("Index", 10) << " | " << minw("First Name", 10) << " | " << minw("Last Name", 10) << " | " << minw("Nickname", 10) << " |"<< std::endl;
-	for (int i = 0; i < 8; i++)
+void	PhoneBook::searchContact() {
+	int l;
+	l = (_nbContacts > 8) ? 8 : _nbContacts;
+	std::cout <<std::setw(10) << "Index"  << " | ";
+	std::cout << std::setw(10) << "First Name" << " | ";
+	std::cout << std::setw(10) << "Last Name" << " | ";
+	std::cout << std::setw(10) << "Nickname" << " |"<< std::endl;
+	for (int i = 0; i < l; i++)
 	{
-		std::cout << minw(std::to_string(i), 10) << " | ";
-		std::cout << minw(_contacts[i].getFirstName(), 10) << " | ";
-		std::cout << minw(_contacts[i].getLastName(), 10) << " | ";
-		std::cout << minw(_contacts[i].getNickname(), 10) << " | " << std::endl;
+		std::cout << std::setw(10) << i << " | ";
+		_contacts[i].printRow();
+		std::cout << std::endl;
 	}
+}
+
+void	PhoneBook::searchContact(int index) {
+	if (index > _nbContacts - 1)
+		std::cout << "Contact not found !" << std::endl;
+	else if (index > 7)
+		std::cout << "Index out of range !" << std::endl;
+	else
+		_contacts[index].printDetails();
 }

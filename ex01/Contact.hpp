@@ -2,6 +2,7 @@
 # define CONTACT_HPP
 # include <iostream>
 # include <string>
+#include <iomanip>
 
 class Contact
 {
@@ -14,6 +15,8 @@ class Contact
 		std::string getFirstName();
 		std::string getLastName();
 		std::string getNickname();
+		void		printRow();
+		void		printDetails();
 	private:
 		std::string	_firstname;
 		std::string	_lastname;

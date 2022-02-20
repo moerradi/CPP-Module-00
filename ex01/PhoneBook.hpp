@@ -2,6 +2,7 @@
 # define PHONEBOOK_HPP
 #include "Contact.hpp"
 
+
 class PhoneBook{
 	public:
 		PhoneBook();
@@ -9,6 +10,7 @@ class PhoneBook{
 		PhoneBook(const PhoneBook &p);
 		PhoneBook &operator=(const PhoneBook &p);
 		void addContact(Contact c);
+		void searchContact(int index);
 		void searchContact();
 	private:
 		Contact	_contacts[8];
